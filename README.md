@@ -109,6 +109,8 @@ Ecrire une fonction `cherche2()` qui prend en argument :
 
 Utiliser les fonctions `main()` et `cherche2()` pour trouver les mots de 8 à 12 lettres commençant par une consonne, se terminant par une voyelle et comportant un ``ç``.
 
+<!-- START INSERT -->
+
 ## To do
 
 1️⃣ Ecrire (ou modifier) le code de la fonction secondaire.
@@ -139,3 +141,5 @@ Si le score de qualité ``SQ`` n'est pas maximal, répéter l'étape 5️⃣ en 
 
 > [!CAUTION]
 En cas de soumissions multiples, seule la première est prise en compte.
+
+<!-- END INSERT -->
