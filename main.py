@@ -33,9 +33,8 @@ def read_data(filename):
     >>> mots[166128]
     'gloire'
     """
-    with open(filename, mode='r', encoding="utf8") as f:
-        mots = f.readlines()
-    return [ mot.strip() for mot in mots ]
+    
+    return None
 
 
 def ensemble_mots(filename):
@@ -57,7 +56,8 @@ def ensemble_mots(filename):
     >>> "glycosudrique" in mots
     False
     """
-    return set(read_data(filename))
+    
+    return None
 
 
 def mots_de_n_lettres(mots, n):
@@ -85,7 +85,8 @@ def mots_de_n_lettres(mots, n):
     >>> sorted(list(mots_de_n_lettres(mots,25)))
     ['anticonstitutionnellement', 'oto-rhino-laryngologistes']
     """
-    return { mot for mot in mots if len(mot) == n }
+    
+    return None
 
 
 def mots_avec(mots, s):
@@ -111,7 +112,8 @@ def mots_avec(mots, s):
     >>> sorted(list(mk))[999::122]
     ['képi', 'nickela', 'parkérisiez', 'semi-coke', 'stockais', 'week-end']
     """
-    return { mot for mot in mots if s in mot }
+    
+    return None
 
 
 def cherche1(mots, start, stop, n):
@@ -135,7 +137,9 @@ def cherche1(mots, start, stop, n):
     >>> sorted(list(m_z))[4:7]
     ['zinguez', 'zippiez', 'zonerez']
     """
-    return { mot for mot in mots if len(mot) == n and mot.startswith(start) and mot.endswith(stop) }
+    
+    return None
+
 
 def cherche2(mots, lstart, lmid, lstop, nmin, nmax):
     """effectue une recherche complexe dans un ensemble de mots
@@ -160,51 +164,13 @@ def cherche2(mots, lstart, lmid, lstop, nmin, nmax):
     >>> mab17ez
     {'alphabétisassiez'}
     """
-    good_length = { mot for mot in mots if len(mot) >= nmin and len(mot) <= nmax }
-    start = set()
-    mid = set()
-    stop = set()
-    for mot in good_length:
-        for s in lstart:
-            if mot.startswith(s):
-                start.add(mot)
-        for s in lstop:
-            if mot.endswith(s):
-                stop.add(mot)
-        for s in lmid:
-            if s in mot:
-                mid.add(mot)
-
-    # print(start)
-    # print(mid)
-    # print(stop)
-
-    return start & mid & stop
-
-# def cherche2(ensemble_mots, lstart, lmid, lstop, nmin, nmax):
-#     sous_ensemble = set()
-
-#     for mot in ensemble_mots:
-#         # Vérifier la longueur du mot
-#         if nmin <= len(mot) <= nmax:
-#             # Si lstart est vide, on accepte tous les mots, sinon on vérifie
-#             if not lstart or any(mot.startswith(start) for start in lstart):
-#                 # Si lmid est vide, on accepte tous les mots, sinon on vérifie au milieu
-#                 if not lmid or any(mid in mot[1:-1] for mid in lmid):
-#                     # Si lstop est vide, on accepte tous les mots, sinon on vérifie la fin
-#                     if not lstop or any(mot.endswith(stop) for stop in lstop):
-#                         sous_ensemble.add(mot)
-
-#     return sous_ensemble
-
-
-# #### Fonction principale
+    
+    return None
 
 
 def main():
     pass
     mots = read_data(FILENAME)
-    # print( [ mots[i] for i in [24499, 28281, 57305, 118091, 199316, 223435, 336455] ] )
     ens = ensemble_mots(FILENAME)
     # print( [ mot for mot in ["chronophage", "procrastinateur", "dangerosité", "gratifiant"] if mot in ens ] )
     # m17 = mots_de_n_lettres(ens, 17)
@@ -224,8 +190,8 @@ def main():
     # print(m_z)
     # mab17ez = mots_avec(cherche1(ens, 'sur', 'ons', 17), 'x')
     # print(mab17ez)
-    mab17ez = cherche2(mots, 'a', 'b', 'z', 16, 16)
-    print(mab17ez)
+    # mab17ez = cherche2(mots, 'a', 'b', 'z', 16, 16)
+    # print(mab17ez)
 
 
 

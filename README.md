@@ -34,7 +34,7 @@ Le mot "ensemble" est ici pris dans son acception [mathématique](https://fr.wik
 Ecrire la fonction secondaire `ensemble_mots()` qui prend en argument un nom de fichier et retourne un [set](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset) de ces mots.
 
 > [!TIP]
-> Cette fonction doit être écrite sans duplication de code, et donc faire appel à ``liste_mots()``. Le constructeur de [set](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset) prend en argument une séquence, c’est à dire un objet itérable.
+> Cette fonction doit être écrite sans duplication de code, et donc faire appel à `read_data()`. Le constructeur de [set](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset) prend en argument une séquence, c’est à dire un objet itérable.
 
 > [!TIP]
 > La recherche dans une `list` possède de piètres performances. Dans les pires cas (le mot recherché est présent mais en dernière position, ou le mot recherché n'est pas présent) il faut balayer toute la liste, et la complexité algorithmique est en $\Theta(n)$. Le [`set`](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset) est ici beaucoup plus adapté. La complexité algorithmique de la recherche est cette fois en $\Theta(1)$. Au détriment il est vrai d'un encombrement mémoire plus important.
@@ -98,7 +98,7 @@ Ecrire une fonction `cherche2()` qui prend en argument :
 - une liste de chaines de caractères `lmid` ;
 - une liste de chaines de caractères `lstop` ;
 - un entier nmin, le nombre minimal de lettres dans le mot
-- un entier nmax, le nombre minimal de lettres dans le mot
+- un entier nmax, le nombre maximal de lettres dans le mot
 - et retourne le sous ensemble des mots :
   - de longueur comprise entre  `nmin` et `nmax` ;
   - commençant par une chaine de caractères présente dans `lstart` ;
